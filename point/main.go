@@ -34,7 +34,7 @@ func main() {
 	output := []rune{
 		LetX, space, EqualTo, space, digit4, digit2,
 		 comma, space, LetY, space, EqualTo, digit2,digit1,
-		 newline
+		 newline,
 	}
 	for _, ch := range output {
 	z01.PrintRune(ch)
