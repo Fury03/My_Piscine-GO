@@ -1,7 +1,6 @@
 package main
 
 import (
-
 	"github.com/01-edu/z01"
 )
 
@@ -11,16 +10,15 @@ type point struct {
 }
 
 const (
-	LetX = 'x'
-	LetY = 'y'
+	LetX    = 'x'
+	LetY    = 'y'
 	EqualTo = '='
-	comma = ','
-	digit4 = '4'
-	digit2 = '2'
-	digit1 = '1'
+	comma   = ','
+	digit4  = '4'
+	digit2  = '2'
+	digit1  = '1'
 	newline = '\n'
-	space = ' '
-
+	space   = ' '
 )
 
 func setPoint(ptr *point) {
@@ -31,13 +29,13 @@ func setPoint(ptr *point) {
 func main() {
 	p := &point{}
 	setPoint(p)
-	output := []rune{
+	output = []rune{
 		LetX, space, EqualTo, space, digit4, digit2,
-		 comma, space, LetY, space, EqualTo, digit2,digit1,
-		 newline,
+		comma, space, LetY, space, EqualTo, digit2, digit1,
+		newline,
 	}
 	for _, ch := range output {
-	z01.PrintRune(ch)
+		z01.PrintRune(ch)
 	}
 
 }
