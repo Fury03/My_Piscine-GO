@@ -12,30 +12,12 @@ func setPoint(ptr *point) {
 	ptr.y = 21
 }
 
-func printNbr(n int) {
-	if n < 0 {
-		z01.PrintRune('-')
-		n = -n
-	}
-	if n > 9 {
-		printNbr(n / 10)
-	}
-	z01.PrintRune(rune(n%10 + '0'))
-}
-
-func printStr(s string) {
-	for _, r := range s {
-		z01.PrintRune(r)
-	}
-}
-
 func main() {
 	p := &point{}
 	setPoint(p)
 
-	printStr("x = ")
-	printNbr(p.x)
-	printStr(", y = ")
-	printNbr(p.y)
-	z01.PrintRune('\n')
+	out := "x = 42, y = 21\n"
+	for _, ch := range out {
+		z01.PrintRune(ch)
+	}
 }
