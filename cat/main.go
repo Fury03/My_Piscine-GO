@@ -1,34 +1,37 @@
 package main
 
 import (
-	"io/ioutil"
+	"io"
 	"os"
 
 	"github.com/01-edu/z01"
 )
 
 func main() {
-	if len(os.Args) >= 2 {
-		for _, v := range os.Args[1:] {
-			data, err := os.ReadFile(v)
+	// If arguments are provided → treat them as file paths
+	if len(os.Args) > 1 {
+		for _, filename := range os.Args[1:] {
+			data, err := os.ReadFile(filename)
 			if err != nil {
 				printStr("ERROR: " + err.Error() + "\n")
 				os.Exit(1)
 			}
 			printStr(string(data))
 		}
-	} else if len(os.Args) == 1 {
-		input, err := ioutil.ReadAll(os.Stdin)
-		printStr(string(input))
-		if err != nil {
-			printStr("ERROR: " + err.Error() + "\n")
-			os.Exit(1)
-		}
+		return
 	}
+
+	// Otherwise: read from stdin
+	data, err := io.ReadAll(os.Stdin)
+	if err != nil {
+		printStr("ERROR: " + err.Error() + "\n")
+		os.Exit(1)
+	}
+	printStr(string(data))
 }
 
 func printStr(s string) {
-	for _, v := range s {
-		z01.PrintRune(v)
+	for _, r := range s {
+		z01.PrintRune(r)
 	}
 }
