@@ -23,18 +23,11 @@ func printNbr(n int) {
 		z01.PrintRune('-')
 		n = -n
 	}
-	if n == 0 {
-		z01.PrintRune('0')
-		return
+
+	if n >= 10 {
+		printNbr(n / 10)
 	}
-	var d []rune
-	for n > 0 {
-		d = append(d, rune(n%10+'0'))
-		n /= 10
-	}
-	for i := len(d) - 1; i >= 0; i-- {
-		z01.PrintRune(d[i])
-	}
+	z01.PrintRune(rune(n%10 + '0'))
 }
 
 func main() {
