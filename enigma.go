@@ -2,7 +2,7 @@ package student
 
 func Enigma(a ***int, b *int, c *******int, d ****int) {
 
-	valueA := ***a
+	valueA = ***a
 	valueB := *b
 	valueC := *******c
 	valueD := ****d
