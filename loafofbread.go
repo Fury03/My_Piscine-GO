@@ -9,19 +9,18 @@ func LoafOfBread(str string) string {
 	}
 
 	returnStr := ""
-	wordCount := 0
+	count := 0
 
 	for _, ch := range str {
-		if ch == ' ' {
-			continue
+		returnStr += string(ch)
+
+		if ch != ' ' {
+			count++
 		}
 
-		returnStr += string(ch)
-		wordCount++
-
-		if wordCount == 5 {
+		if count == 5 {
 			returnStr += " "
-			wordCount = 0
+			count = 0
 		}
 	}
 
