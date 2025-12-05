@@ -7,5 +7,5 @@ func ReverseMenuIndex(menu []string) []string {
 	for i := 0; i < l; i++ {
 		reversed[i] = menu[l-1-i]
 	}
-	return reverse
+	return reversed
 }
