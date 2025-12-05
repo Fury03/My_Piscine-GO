@@ -8,21 +8,23 @@ func LoafOfBread(str string) string {
 		return "Invalid Output\n"
 	}
 
-	returnStr := ""
-	count := 0
-
+	// Remove spaces for counting letters
+	letters := ""
 	for _, ch := range str {
-		returnStr += string(ch)
-
 		if ch != ' ' {
-			count++
+			letters += string(ch)
 		}
+	}
 
-		if count == 5 {
+	returnStr := ""
+	for i, ch := range letters {
+		returnStr += string(ch)
+		// Add a space after every 5 letters
+		if (i+1)%5 == 0 && i != len(letters)-1 {
 			returnStr += " "
-			count = 0
 		}
 	}
 
 	return returnStr + "\n"
 }
+
