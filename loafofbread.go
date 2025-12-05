@@ -13,7 +13,7 @@ func LoafOfBread(str string) string {
 
 	for _, ch := range str {
 		if ch == ' ' {
-			continue 
+			continue
 		}
 
 		returnStr += string(ch)
