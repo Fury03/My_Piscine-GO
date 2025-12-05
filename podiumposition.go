@@ -1,11 +1,14 @@
 package student
 
 func PodiumPosition(podium [][]string) [][]string {
-	n := len(podium)
-	result := make([][]string, n)
+	i := 0
+	j := len(podium) - 1
 
-	for i := 0; i < n; i++ {
-		result[i] = podium[n-1-i]
+	for i < j {
+		podium[i], podium[j] = podium[j], podium[i]
+		i++
+		j--
 	}
-	return result
+
+	return podium
 }
