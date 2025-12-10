@@ -1,0 +1,13 @@
+package student
+
+func BTreeMin(root *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	current := root
+	// Keep going left until there is no more left child
+	for current.Left != nil {
+		current = current.Left
+	}
+	return current
+}
